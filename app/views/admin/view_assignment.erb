@@ -1,6 +1,6 @@
 <a href="/back">Back</a>
 
-<h1><%= assignment.title %></h1>
+<h1><%= @assignment.title %></h1>
 
 <p>Assignment Difficulty: <strong><%= @assignment.difficulty %></strong></p>
 
@@ -19,8 +19,8 @@
     <% @assignment.students.each do |s| %>
       <tr>
         <td><a href="/students/<%= s.id %>"><%= s.name %></a></td>
-        <td><%= s.grade_for_assignment(@assignment) %></td>
-        <td><%= s.adjusted_grade(@assignment) %></td>
+        <td><%= s.grade_for_assignment(@student) %></td>
+        <td><%= s.adjusted_grade(@student) %></td>
       </tr>
     <% end %>
   </tbody>

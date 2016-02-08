@@ -41,13 +41,13 @@ class Student < ActiveRecord::Base
   def all_adjusted_scores
     arr = []
     self.grades.each do |g|
-      arr = g.adjusted_score
+      arr << g.adjusted_score
     end
     return arr
   end
 
   def grade_for_assignment(assignment_object)
-    submission = self.submissions.find_by_assignment_id(assignment_object.id)
+    submission = self.submissions.find_by_assignment_id(assignment_object)
 
     if submission.nil?
       return 0
@@ -57,12 +57,12 @@ class Student < ActiveRecord::Base
   end
 
   def adjusted_grade_for_assignment(assignment_object)
-    submision = self.submissions.find_by_assignment_id(assignment_object.id)
+    submission = self.submissions.find_by_assignment_id(assignment_object)
 
     if submission.nil?
       return 0
     else
-      return submission.grade.adjusted_score
+      return submission.grade.adjusted_score.round(2)
     end
   end
 
