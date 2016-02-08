@@ -11,6 +11,7 @@ class Student < ActiveRecord::Base
     (self.grades.sum(:score) / Assignment.count)
   end
 
+
   # Get the average adjusted score for all of this student's submissions.
   # 
   # This method starts with a tally (total) of zero. It then calls this
