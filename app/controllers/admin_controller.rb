@@ -1,7 +1,7 @@
 MyApp.get "/" do
   @students = Student.all
   @assignments = Assignment.all
-  erb :"admin/home"
+  erb :"/admin/home"
 end
 
 MyApp.get "/students/:student_id" do

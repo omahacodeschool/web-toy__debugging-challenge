@@ -16,10 +16,11 @@ Back
     <% @assignments.each do |a| %>
       <tr>
         <td><a href="/assignments/<%= a.id %>"><%= a.title %></a></td>
-        <td><%= turned_in_assignment? %></td>
+        <td><%= a.turned_in_assignment?(@assignment) %></td>
 
         <!-- The score and adjusted scores aren't here at all. -->
         <!-- It's for you to complete on your own. -->
+    
         <td></td>
         <td></td>
       </tr>
