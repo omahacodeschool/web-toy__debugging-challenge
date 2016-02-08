@@ -4,7 +4,7 @@ class Student < ActiveRecord::Base
   has_many :grades, :through => :submissions
 
   def percentage_assignments_turned_in
-    (self.assignments.count.to_f / Assignment.count * 100
+    (self.assignments.count.to_f / Assignment.count * 100)
   end
 
   def overall_grade
@@ -47,22 +47,22 @@ class Student < ActiveRecord::Base
   end
 
   def grade_for_assignment(assignment_object)
-    submission = self.submissions.find_by_assignment_id(assignment_object.id)
+    @submission = self.submissions.find_by_assignment_id(assignment_object.id)
 
-    if submission.nil?
+    if @submission.nil?
       return 0
     else
-      return submission.grade.score
+      return @submission.grade.score
     end
   end
 
   def adjusted_grade_for_assignment(assignment_object)
-    submision = self.submissions.find_by_assignment_id(assignment_object.id)
+    @submision = self.submissions.find_by_assignment_id(assignment_object.id)
 
-    if submission.nil?
+    if @submission.nil?
       return 0
     else
-      return submission.grade.adjusted_score
+      return @submission.grade.adjusted_score
     end
   end
 
