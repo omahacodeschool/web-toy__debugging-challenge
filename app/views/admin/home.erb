@@ -20,7 +20,7 @@
         <td><%= s.overall_grade %></td>
 
         <!-- You will need to add the overall adjusted grade yourself: -->
-        <td></td>
+        <td><%= s.overall_grade_adjusted %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,9 +31,9 @@
 <ul>
   <% @assignments.each do |assignment| %>
     <li>
-      <a href="/assignment/<%= assignment.id %>">
-        <%= assignment.title %>
-      </a>
+      <a href="/assignments/<%= assignment.id %>"><%= assignment.title %></a>
     </li>
   <% end %>
 </ul>
+
+
