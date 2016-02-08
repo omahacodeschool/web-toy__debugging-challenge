@@ -22,7 +22,7 @@ class Student < ActiveRecord::Base
   def overall_grade_adjusted
     total = 0
 
-    self.all_adjusted_scores.each do |n|
+    self.all_adjusted_scores do |n|
       total += n
     end
 
