@@ -1,3 +1,4 @@
+
 MyApp.get "/" do
   @students = Student.all
   @assignments = Assignment.all
