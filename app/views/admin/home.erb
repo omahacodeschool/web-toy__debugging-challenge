@@ -16,11 +16,11 @@
     <% @students.each do |s| %>
       <tr>
         <td><a href="/students/<%= s.id %>"><%= s.name %></a></td>
-        <td><%= s.percentage_assignments_turned_in %>%</td>
+        <td><%= s.percentage_assignments_turned_in %></td>
         <td><%= s.overall_grade %></td>
 
         <!-- You will need to add the overall adjusted grade yourself: -->
-        <td></td>
+        <td><%= s.overall_grade_adjusted %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,7 +31,7 @@
 <ul>
   <% @assignments.each do |assignment| %>
     <li>
-      <a href="/assignment/<%= assignment.id %>">
+      <a href="/assignments/<%= assignment.id %>">
         <%= assignment.title %>
       </a>
     </li>
