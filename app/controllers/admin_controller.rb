@@ -12,6 +12,6 @@ end
 
 MyApp.get "/assignments" do
   @assignment = Assignment.find(params[:id])
-  erb :"/admin/assignment"
+  erb :"/admin/view_assignment"
 end
 

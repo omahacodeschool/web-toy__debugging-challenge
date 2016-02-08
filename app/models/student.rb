@@ -1,3 +1,5 @@
+require_relative 'assignment'
+
 class Student < ActiveRecord::Base
   has_many :submissions
   has_many :assignments, :through => :submissions
@@ -33,6 +35,7 @@ class Student < ActiveRecord::Base
 
   # Collect all of this student's adjusted scores.
   # 
+
   # This method starts with an empty Array. Then is loops through all of this
   # student's grades and looks at that grade's adjusted score. It then adds
   # that adjusted score to the array. Then it returns the populated Array.
