@@ -4,5 +4,6 @@ class Grade < ActiveRecord::Base
 
   def adjusted_score
     (self.assignment.difficulty.to_f / 100) * self.score
+
   end
 end
