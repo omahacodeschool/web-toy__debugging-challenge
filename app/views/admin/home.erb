@@ -1,3 +1,4 @@
+<center><img src="http://mabp.kiev.ua/content/img/illustrations/goat.png" alt=""></center>
 <h1>Student Management Center</h1>
 
 <p>Welcome to the SMC. Below is a list of all students, linked to their profiles, and related information.</p>
@@ -18,9 +19,7 @@
         <td><a href="/students/<%= s.id %>"><%= s.name %></a></td>
         <td><%= s.percentage_assignments_turned_in %>%</td>
         <td><%= s.overall_grade %></td>
-
-        <!-- You will need to add the overall adjusted grade yourself: -->
-        <td></td>
+        <td><%= s.overall_grade_adjusted %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,7 +30,7 @@
 <ul>
   <% @assignments.each do |assignment| %>
     <li>
-      <a href="/assignment/<%= assignment.id %>">
+      <a href="/assignments/<%= assignment.id %>">
         <%= assignment.title %>
       </a>
     </li>
