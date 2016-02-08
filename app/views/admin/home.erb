@@ -30,11 +30,9 @@
 <h2>All Assignments</h2>
 
 <ul>
-  <% @assignments.each do |assignment| %>
+  <% @assignments.each do |a| %>
     <li>
-      <a href="/assignment/<%= assignment.id %>">
-        <%= assignment.title %>
-      </a>
+      <a href="/assignments/<%= a.id %>"><%= a.title %></a>
     </li>
   <% end %>
 </ul>
