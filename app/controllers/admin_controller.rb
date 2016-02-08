@@ -1,3 +1,5 @@
+
+
 MyApp.get "/" do
   @students = Student.all
   @assignments = Assignment.all
@@ -13,4 +15,8 @@ end
 MyApp.get "/assignments" do
   @assignment = Assignment.find(params[:id])
   erb :"/admin/assignment"
+end
+
+MyApp.get "/assignments/1" do
+  erb :"/admin/prs_assignment"
 end
