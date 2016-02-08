@@ -24,7 +24,6 @@ class Student < ActiveRecord::Base
     total = 0
 
     self.all_adjusted_scores.each do |n|
-      binding.pry
       total += n
     end
 
