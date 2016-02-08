@@ -1,0 +1,28 @@
+Back
+
+<h1><%= @student.name %></h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Assignment</th>
+      <th>Turned In?</th>
+      <th>Score</th>
+      <th>Adjusted Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assignments.each do |a| %>
+      <tr>
+        <td><a href="/assignments/<%= a.id %>"><%= a.title %></a></td>
+        <td><%= turned_in_assignment? %></td>
+
+        <!-- The score and adjusted scores aren't here at all. -->
+        <!-- It's for you to complete on your own. -->
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

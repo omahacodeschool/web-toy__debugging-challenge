@@ -1,0 +1,12 @@
+#!/bin/bash
+
+bundle install
+
+echo -e "\nInitializing new database..."
+bundle exec rake db:create
+
+echo -e "\nSetting up database tables..."
+bundle exec rake db:migrate
+
+echo -e "\nAdding starter data..."
+bundle exec rake db:seed

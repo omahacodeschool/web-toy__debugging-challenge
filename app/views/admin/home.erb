@@ -1,0 +1,39 @@
+<h1>Student Management Center</h1>
+
+<p>Welcome to the SMC. Below is a list of all students, linked to their profiles, and related information.</p>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>% Assignments Turned In</th>
+      <th>Overall Grade</th>
+      <th>Overall Grade, Adj. for Difficulty</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |s| %>
+      <tr>
+        <td><a href="/students/<%= s.id %>"><%= s.name %></a></td>
+        <td><%= s.percentage_assignments_turned_in %>%</td>
+        <td><%= s.overall_grade %></td>
+
+        <!-- You will need to add the overall adjusted grade yourself: -->
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>All Assignments</h2>
+
+<ul>
+  <% @assignments.each do |assignment| %>
+    <li>
+      <a href="/assignment/<%= assignment.id %>">
+        <%= assignment.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
