@@ -15,7 +15,7 @@ Back
   <tbody>
     <% @assignments.each do |a| %>
       <tr>
-        <td><a href="/assignments/<%= a.id %>"><%= a.title %></a></td>
+        <td><a href="/assignment/<%= a.id %>"><%= a.title %></a></td>
         <td><%= @student.turned_in_assignment?(a) %></td>
 
         <!-- The score and adjusted scores aren't here at all. -->
