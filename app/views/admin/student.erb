@@ -1,4 +1,4 @@
-Back
+<a href="/">Back</a>
 
 <h1><%= @student.name %></h1>
 
@@ -17,11 +17,10 @@ Back
       <tr>
         <td><a href="/assignments/<%= a.id %>"><%= a.title %></a></td>
         <td><%= @student.turned_in_assignment?(a) %></td>
-
         <!-- The score and adjusted scores aren't here at all. -->
         <!-- It's for you to complete on your own. -->
-        <td></td>
-        <td></td>
+        <td><%= a.grade_for_assignment(@assignment) %></td>
+        <td><%= a.adjusted_grade_for_assignment(@assignment) %></td>
       </tr>
     <% end %>
   </tbody>
