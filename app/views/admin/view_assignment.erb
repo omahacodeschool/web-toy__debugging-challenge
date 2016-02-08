@@ -19,8 +19,8 @@
     <% @assignment.students.each do |s| %>
       <tr>
         <td><a href="/students/<%= s.id %>"><%= s.name %></a></td>
-        <td><%= s.grade_for_assignment(@student) %></td>
-        <td><%= s.adjusted_grade(@student) %></td>
+        <td><%= s.grade_for_assignment(s) %></td>
+        <td><%= s.adjusted_grade_for_assignment(s) %></td>
       </tr>
     <% end %>
   </tbody>
