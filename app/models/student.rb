@@ -1,3 +1,4 @@
+require 'pry'
 class Student < ActiveRecord::Base
   has_many :submissions
   has_many :assignments, :through => :submissions
@@ -23,6 +24,7 @@ class Student < ActiveRecord::Base
     total = 0
 
     self.all_adjusted_scores.each do |n|
+      binding.pry
       total += n
     end
 
@@ -41,7 +43,7 @@ class Student < ActiveRecord::Base
   def all_adjusted_scores
     arr = []
     self.grades.each do |g|
-      arr = g.adjusted_score
+      arr << g.adjusted_score #i turned an = into <<
     end
     return arr
   end
