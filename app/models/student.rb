@@ -4,7 +4,7 @@ class Student < ActiveRecord::Base
   has_many :grades, :through => :submissions
 
   def percentage_assignments_turned_in
-    (self.assignments.count.to_f / Assignment.count * 100
+    (self.assignments.count.to_f / Assignment.count * 100)
   end
 
   def overall_grade
