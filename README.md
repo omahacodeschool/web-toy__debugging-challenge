@@ -106,6 +106,4 @@ The solution is determining how to correctly use the `turned_in_assignment?` met
 
 ### Extras
 
-If you're interested, try adding some features to the application. Here are some ideas:
-
-- 
+If you're interested, try adding some features to the application.
