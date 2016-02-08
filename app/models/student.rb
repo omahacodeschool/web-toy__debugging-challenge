@@ -44,9 +44,9 @@ class Student < ActiveRecord::Base
   def all_adjusted_scores
     arr = []
     self.grades.each do |g|
-      arr = g.adjusted_score
+      arr << g.adjusted_score
     end
-    return arr.join
+    return arr
   end
 
   def grade_for_assignment(assignment_object)

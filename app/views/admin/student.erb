@@ -1,4 +1,4 @@
-Back
+<a href="/back">Back</a>
 
 <h1><%= @student.name %></h1>
 
@@ -16,12 +16,14 @@ Back
     <% @assignments.each do |a| %>
       <tr>
         <td><a href="/assignments/<%= a.id %>"><%= a.title %></a></td>
-        <td><%= @student.turned_in_assignment?(@assignment) %></td>
-        <!--                                                   -->
+        <td><%= @student.turned_in_assignment?(a) %></td>
+        <!--                                                  
+
+         -->
         <!-- The score and adjusted scores aren't here at all. -->
         <!-- It's for you to complete on your own. -->
-        <td></td>
-        <td></td>
+        <td><%= @student.grade_for_assignment(a) %></td>
+        <td><%= @student.adjusted_grade_for_assignment(a)%></td>
       </tr>
     <% end %>
   </tbody>

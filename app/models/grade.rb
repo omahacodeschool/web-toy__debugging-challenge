@@ -3,6 +3,6 @@ class Grade < ActiveRecord::Base
   has_one :assignment, :through => :submission
 
   def adjusted_score
-    (self.assignment.difficulty.to_i / 100) * self.score
+    (self.assignment.difficulty.to_f / 100) * self.score
   end
 end
