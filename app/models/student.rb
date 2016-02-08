@@ -1,10 +1,11 @@
+require 'pry'
 class Student < ActiveRecord::Base
   has_many :submissions
   has_many :assignments, :through => :submissions
   has_many :grades, :through => :submissions
 
   def percentage_assignments_turned_in
-    (self.assignments.count.to_f / Assignment.count * 100
+    (self.assignments.count.to_f / Assignment.count * 100)
   end
 
   def overall_grade
@@ -41,7 +42,7 @@ class Student < ActiveRecord::Base
   def all_adjusted_scores
     arr = []
     self.grades.each do |g|
-      arr = g.adjusted_score
+      arr << g.adjusted_score #i turned an = into <<
     end
     return arr
   end
@@ -57,7 +58,7 @@ class Student < ActiveRecord::Base
   end
 
   def adjusted_grade_for_assignment(assignment_object)
-    submision = self.submissions.find_by_assignment_id(assignment_object.id)
+    submission = self.submissions.find_by_assignment_id(assignment_object.id)
 
     if submission.nil?
       return 0
