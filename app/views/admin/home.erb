@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @students.each do |s| %>
+    <% @student.each do |s| %>
       <tr>
         <td><a href="/students/<%= s.id %>"><%= s.name %></a></td>
         <td><%= s.percentage_assignments_turned_in %>%</td>
