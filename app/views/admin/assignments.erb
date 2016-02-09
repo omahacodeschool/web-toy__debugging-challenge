@@ -1,6 +1,6 @@
-<a href="/back">Back</a>
+<a href="/">Back</a>
 
-<h1><%= assignment.title %></h1>
+<h1><%= @assignment.title %></h1>
 
 <p>Assignment Difficulty: <strong><%= @assignment.difficulty %></strong></p>
 
@@ -9,7 +9,7 @@
 <table border="1">
   <thead>
     <tr>
-      <th>Student</th>
+      <th>Student</th>s
       <th>Score</th>
       <th>Adjusted Score</th>
     </tr>
@@ -20,7 +20,7 @@
       <tr>
         <td><a href="/students/<%= s.id %>"><%= s.name %></a></td>
         <td><%= s.grade_for_assignment(@assignment) %></td>
-        <td><%= s.adjusted_grade(@assignment) %></td>
+        <td><%= s.adjusted_grade_for_assignment(@assignment) %></td>
       </tr>
     <% end %>
   </tbody>
