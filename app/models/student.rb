@@ -47,7 +47,7 @@ class Student < ActiveRecord::Base
   end
 
   def grade_for_assignment(assignment_object)
-    submission = self.submissions.find_by_assignment_id(@assignment.id)
+    submission = self.submissions.find_by_assignment_id(assignment_object.id)
 
     if submission.nil?
       return 0
@@ -57,7 +57,7 @@ class Student < ActiveRecord::Base
   end
 
   def adjusted_grade_for_assignment(assignment_object)
-    submission = self.submissions.find_by_assignment_id(@assignment.id)
+    submission = self.submissions.find_by_assignment_id(assignment_object.id)
 
     if submission.nil?
       return 0
