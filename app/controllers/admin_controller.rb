@@ -10,8 +10,8 @@ MyApp.get "/students/:student_id" do
   erb :"/admin/student"
 end
 
-MyApp.get "/assignments/:id" do
-  @assignments = Assignment.find(params[:id])
+MyApp.get "/assignment/:id" do
+  @assignment = Assignment.find(params[:id])
   @student = Student.all
   erb :"/admin/view_assignment"
 end
