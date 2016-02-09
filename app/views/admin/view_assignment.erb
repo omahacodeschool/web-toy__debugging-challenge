@@ -20,7 +20,7 @@
       <tr>
         <td><a href="/students/<%= s.id %>"><%= s.name %></a></td>
         <td><%= s.grade_for_assignment(@assignment) %></td>
-        <td><%= s.adjusted_grade(@assignment) %></td>
+        <td><%= s.adjusted_grade_for_assignment(@assignment) %></td>
       </tr>
     <% end %>
   </tbody>

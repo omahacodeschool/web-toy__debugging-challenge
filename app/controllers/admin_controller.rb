@@ -15,3 +15,9 @@ MyApp.get "/assignment/:id" do
   @assignment = Assignment.find(params[:id])
   erb :"/admin/view_assignment"
 end
+
+MyApp.get "/back" do
+  @students = Student.all
+  @assignments = Assignment.all
+  erb :"admin/home"
+end
